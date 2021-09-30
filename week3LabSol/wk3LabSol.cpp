@@ -98,6 +98,13 @@ void swappages(int***& book, int pages, int lines, int cols, int page1, int page
             book[page2][j][k] = temp;
         }
     }
+    /*
+    Accept this as well
+    int** temp;
+    temp = book[page1];
+    book[page1] = book[page2];
+    book[page2] = temp;
+    */
 }
 
 /*bubble sort*/
@@ -169,8 +176,3 @@ page:1
 book cleared
 
 */
-
-/*int** temp;
-temp = book[page1];
-book[page1] = book[page2];
-book[page2] = temp;*/
