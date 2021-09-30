@@ -124,7 +124,6 @@ void bsort(int*** book, int pages, int lines, int cols) {
     display_array(sumbook, pages);
 }
 
-//  conditions:  pages in a book,  line number, and columns must be same
 int main() {
     srand(time(0));
     int k, m, n;
@@ -148,31 +147,67 @@ int main() {
 }
 
 /*
-test results(1):
-enter number of pages   2
-enter number of lines   2
-enter number of columns 2
+Test results(1):
+    enter number of pages   2
+    enter number of lines   2
+    enter number of columns 2
 
-page:0
-54 54 
-10 46 
+    page:0
+    54 54 
+    10 46 
 
-page:1
-25 14 
-7 12 
+    page:1
+    25 14 
+    7 12 
 
-pre-sort [ 164,58 ]
-post-sort [ 58,164 ]
+    pre-sort [ 164,58 ]
+    post-sort [ 58,164 ]
 
-swapped
+    swapped
 
-page:0
-25 14 
-7 12 
+    page:0
+    25 14 
+    7 12 
 
-page:1
-54 54 
-10 46 
-book cleared
+    page:1
+    54 54 
+    10 46 
+    book cleared
+
+
+Test Results(2):
+
+    enter number of pages3
+    enter number of lines2
+    enter number of columns1
+
+    page:0
+    39 
+    32 
+
+    page:1
+    51 
+    7 
+
+    page:2
+    49 
+    21 
+    pre-sort [ 71,58,70 ]
+    post-sort [ 58,70,71 ]
+    swap
+    page:0
+    51 
+    7 
+
+    page:1
+    49 
+    21 
+
+    page:2
+    39 
+    32 
+    book cleared
+
+
 
 */

@@ -114,37 +114,37 @@ void Display2d(int** a, int rowlen, int col) {
     cout << "]";
 }
 
-/*Test results (1)
+/*Test results (1):
 
-Enter number of rows
-2
-Enter number of columns 
-2
-twoDarr[0][0]=  12
-twoDarr[0][1]=  13
-twoDarr[1][0]=  14
-twoDarr[1][1]=  15
-[ [ 12,13 ], [ 14,15 ] ]
-largest elem found at 1 , 1
+    Enter number of rows
+    2
+    Enter number of columns 
+    2
+    twoDarr[0][0]=  12
+    twoDarr[0][1]=  13
+    twoDarr[1][0]=  14
+    twoDarr[1][1]=  15
+    [ [ 12,13 ], [ 14,15 ] ]
+    largest elem found at 1 , 1
 
 
-Test results (2)
- 
-Enter number of rows
-3
-Enter number of columns 
-3
-twoDarr[0][0]=  12
-twoDarr[0][1]=  13
-twoDarr[0][2]=  45
-twoDarr[1][0]=  14
-twoDarr[1][1]=  15
-twoDarr[1][2]=  16
-twoDarr[2][0]=  7
-twoDarr[2][1]=  8
-twoDarr[2][2]=  9
-[ [ 12,13,45 ], [ 14,15,16 ], [ 7,8,9 ] ]
-largest elem found at 0 , 2
+Test results (2):
+    
+    Enter number of rows
+    3
+    Enter number of columns 
+    3
+    twoDarr[0][0]=  12
+    twoDarr[0][1]=  13
+    twoDarr[0][2]=  45
+    twoDarr[1][0]=  14
+    twoDarr[1][1]=  15
+    twoDarr[1][2]=  16
+    twoDarr[2][0]=  7
+    twoDarr[2][1]=  8
+    twoDarr[2][2]=  9
+    [ [ 12,13,45 ], [ 14,15,16 ], [ 7,8,9 ] ]
+    largest elem found at 0 , 2
 
 
 
