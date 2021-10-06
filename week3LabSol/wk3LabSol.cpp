@@ -32,10 +32,13 @@ void clearbook(int*** book, int pages, int lines, int cols) {
     for (int i = 0; i < pages; i++) {
         for (int j = 0; j < lines; j++) {
             delete[] book[i][j];
+            book[i][j] = nullptr;
         }
         delete[] book[i];
+        book[i] = nullptr;
     }
     delete[] book;
+    book = nullptr;
     cout << "book cleared";
 }
 
