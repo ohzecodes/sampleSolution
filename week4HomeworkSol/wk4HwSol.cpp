@@ -32,9 +32,11 @@ must validate start and end
 Need not be recursive
  */
 int* Slice(int* arr, int size, int start, int end, int& newsize) {
-    int* b = new int[newsize];
+    int* b = nullptr;
     if (start >= 0 && start < size && end > 0 && end < size) {
-        for (int j = 0, i = start; j < newsize || i < end; j++, i++) {
+        newsize = end - start + 1;
+        b = new int[newsize];
+        for (int j = 0, i = start; j < newsize && i <= end; j++, i++) {
             b[j] = arr[i];
         }
     }
@@ -123,7 +125,7 @@ int main() {
     ar[1] = 2;
     ar[2] = 6;
     ar[3] = 7;
-    ar[4] = 5;
+    ar[4] = 7;
     ar[5] = 8;
     ar[6] = 9;
     cout << "\n+++++++++++++++++++++++++\n";
@@ -165,12 +167,19 @@ int main() {
     cout << Rec_productDigit(456) << " = " << 4 * 5 * 6 << endl;
 
     //no need to delete r and l because the MergeInOrder already deletes them
-    delete[] m;
-    m = nullptr;
-    delete[] i;
-    i = nullptr;
-    delete[] ar;
-    ar = nullptr;
+
+    if (m) {
+        delete[] m;
+        m = nullptr;
+    }
+    if (i) {
+        delete[] i;
+        i = nullptr;
+    }
+    if (ar) {
+        delete[] ar;
+        ar = nullptr;
+    }
     return 0;
 }
 
