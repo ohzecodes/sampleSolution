@@ -3,15 +3,11 @@
 using namespace std;
 
 void display_array(int* array, int size) {
+    cout << " [ ";
     for (int i = 0; i < size; i++) {
-        if (i == 0) {
-            cout << " [ " << array[i] << ",";
-        } else if (i == size - 1) {
-            cout << array[i] << " ]";
-        } else {
-            cout << array[i] << ",";
-        }
+        cout << array[i] << ",";
     }
+    cout << "]";
 }
 
 int sumPage(int*** book, int pageNumber, int lines, int col) {
@@ -31,14 +27,20 @@ int GenerateRandomValue(int min, int max) {
 void clearbook(int*** book, int pages, int lines, int cols) {
     for (int i = 0; i < pages; i++) {
         for (int j = 0; j < lines; j++) {
-            delete[] book[i][j];
-            book[i][j] = nullptr;
+            if (book[i][j]) {
+                delete[] book[i][j];
+                book[i][j] = nullptr;
+            }
         }
-        delete[] book[i];
-        book[i] = nullptr;
+        if (book[i]) {
+            delete[] book[i];
+            book[i] = nullptr;
+        }
     }
-    delete[] book;
-    book = nullptr;
+    if (book) {
+        delete[] book;
+        book = nullptr;
+    }
     cout << "book cleared";
 }
 
