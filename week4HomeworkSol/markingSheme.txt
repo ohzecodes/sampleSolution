@@ -17,4 +17,6 @@ If question requires Recursive award and solution is non recursive for that ques
 No documentation         -1/10 
 No name on top           -1/10 
 build errors and warning -1/10 
+all functions tested     -1/10
+Not a zip file           -1/10 
 */
