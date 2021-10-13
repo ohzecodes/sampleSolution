@@ -116,6 +116,14 @@ int* Merge(int* leftArr, int leftSize, int pivot, int* rightArr, int rightSize) 
     return temp;
 }
 
+/*TODO: 
+1. The most easiest fix in the quick sort is to pass the array by reference in the quick-sort function. 
+    because the quick sort happens recursively but changes nothing. 
+    You could also change the return type and try to make it work.
+2.  Memory cleaning: 
+        1. you had to delete the array that beeing pass into split funchion
+        2. You Had to delete both the splits
+    */
 void QuickSort(int*& arr, int len) {
     // sorts arr in ascending order in place (no new array is returned, arr is modified)
 
