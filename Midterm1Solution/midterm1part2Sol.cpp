@@ -176,3 +176,8 @@ int main() {
     }
     return 0;
 }
+/*
+Big-O analysis: 
+    O(n*log n)+ O(n*log n)+ O(n)
+    Because it features 2 mergesorts and one for loop. 
+*/
