@@ -138,6 +138,35 @@ bool IsSame(int* arr1, int* arr2, int arrLen) {
     }
     return issame;
 }
+/*
+Big-O analysis: 
+
+    O(n*log (n)) from merge sorting arr1
+
++   O(n*log (n)) from merge sorting arr2
+
++   O(n) from comparing contents of arr1 with arr2 (the i-loop inside IsSame performs k*n + p operations where k and p are contants. Since k and p can be ignored when forming the big-O of this loop the order of this loop is O(n))
+
++   O(1) from everything else that is happening inside IsSame (such as declarations, assignments, memory clenup that are not inside any loop)
+ 
+    O(n*log(n) + n*log(n) + n + 1) = O(2*n*log(n) + n + 1) = O(2*n*log(n)) = O(n*log(n))
+
+A student may also have generated a more accurate count of operations inside IsSame as follows (following is based on IsSame code above, of course a particular student's count would be specific to their code)
+
+  2 //bool issame = true;
++ 2 //int* c =
++ O(n*log(n)) // MergeSort(arr1, arrLen);
++ 2 //int* e =
++ O(n*log(n)) // MergeSort(arr1, arrLen);
++ 2 // int i = 0
++ 9 * n // rest of i-loop, c[i] is two operations: *(c + i) and so is e[i], i++ is two operations
++ 3 // freeing memory for c
++ 3 // freeing memory for e
++ 1 // returning issame
+
+= 15 + 2*n*log(n) + 9*n = O(2*n*log(n)) = O(n*log(n))
+
+*/
 
 int main() {
     int size = 4;
@@ -176,8 +205,3 @@ int main() {
     }
     return 0;
 }
-/*
-Big-O analysis: 
-    O(n*log n)+ O(n*log n)+ O(n)
-    Because it features 2 mergesorts and one for loop. 
-*/

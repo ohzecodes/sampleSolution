@@ -17,21 +17,19 @@ Midterm marking
 | - Array init with random values  | 2marks |
 +----------------------------------+--------+
 
-+------------------------------------+
-|               Part 2               |
-+---------------------------+--------+
-| Is same                   | 8marks |
-+---------------------------+--------+
-| - Any sorting algorithm   | 2marks |
-+---------------------------+--------+
-| - Finding the same values | 3marks |
-+---------------------------+--------+
-| - Big-0 analysis          | 3marks |
-+---------------------------+--------+
-| Main                      | 2marks |
-+---------------------------+--------+
-| - Clear array             | 1 mark |
-+---------------------------+--------+
-| - Test                    | 1 mark |
-+---------------------------+--------+
++-------------------------------------------------+
+|                       Part 2                    |
++----------------------------------------+--------+
+| Is same                                | 10marks|
++----------------------------------------+--------+
+| - Any sorting algorithm                | 3marks |
++----------------------------------------+--------+
+| - Checking if contents of arrays match | 4marks |  
++----------------------------------------+--------+
+| - Big-0 analysis                       | 3marks |
++----------------------------------------+--------+
 
+if a student does not sort but still successfully checks if two arrays contain the same elements 
+or not then award 7 marks for this part 
+(the big-O analysis will be different in this case, as long as big-O analysis is correct for the student's algorithm then thats good enough).
+For PART 2: testing (i.e. main) is not required

@@ -2,8 +2,7 @@
 #include <string>
 using namespace std;
 
-template <typename T>
-T GenerateRandomValue(T min, T max) {
+int GenerateRandomValue(int min, int max) {
     return rand() % (max - min + 1) + min;
 }
 void display_array(int* array, int size) {
@@ -26,7 +25,8 @@ int MainDiagonalSum(int** matrix, int r, int c) {
     if (r == 0 || c == 0) {
         return 0;
     } else {
-        int sm = (r > c) ? matrix[c - 1][c - 1] : matrix[r - 1][r - 1];  //ternary operator
+        // int sm = (r > c) ? matrix[c - 1][c - 1] : matrix[r - 1][r - 1];  //ternary operator
+        int sm = matrix[c - 1][c - 1];  //since you test this in the main funct
         int big = sm + MainDiagonalSum(matrix, --r, --c);
         return big;
     }
@@ -51,7 +51,12 @@ int main() {
         }
     }
     Display2d(twoDArr, rows, cols);
-    int sum = MainDiagonalSum(twoDArr, rows, cols);
+    int sum = 0;
+    if (rows < cols) {
+        sum = MainDiagonalSum(twoDArr, rows, rows);
+    } else {
+        sum = MainDiagonalSum(twoDArr, cols, cols);
+    }
     cout << endl
          << "Sun=" << sum << "\n";
 
