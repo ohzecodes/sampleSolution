@@ -28,6 +28,6 @@ Midterm marking
 +----------------------------------------+--------+
 
 if a student does not sort but still successfully checks if two arrays contain the same elements 
-or not then award 7 marks for this part 
+or not then award 14 marks for this part 
 (the big-O analysis will be different in this case, as long as big-O analysis is correct for the student's algorithm then thats good enough).
 For PART 2: testing (i.e. main) is not required
