@@ -32,12 +32,7 @@ int MainDiagonalSum(int** matrix, int r, int c) {
     }
 }
 
-int main() {
-    srand(time(NULL));  // null is 0
-    int rows, cols;
-    cout << "enter rows and then cols" << endl;
-    cin >> rows;
-    cin >> cols;
+int** GenerateMatrix(int rows, int cols) {
     // create the 2d array
     int** twoDArr = new int*[rows];
     for (int i = 0; i < rows; i++) {
@@ -50,6 +45,28 @@ int main() {
             twoDArr[i][j] = GenerateRandomValue(0, 9);
         }
     }
+
+    return twoDArr;
+}
+
+int main() {
+    srand(time(NULL));  // null is 0
+    int rows, cols;
+    cout << "enter rows and then cols" << endl;
+    cin >> rows;
+    cin >> cols;
+    // create the 2d array
+    int** twoDArr = GenerateMatrix(rows, cols);
+    // for (int i = 0; i < rows; i++) {
+    //     twoDArr[i] = new int[cols];
+    // }
+
+    // // input values
+    // for (int i = 0; i < rows; i++) {
+    //     for (int j = 0; j < cols; j++) {
+    //         twoDArr[i][j] = GenerateRandomValue(0, 9);
+    //     }
+    // }
     Display2d(twoDArr, rows, cols);
     int sum = 0;
     if (rows < cols) {

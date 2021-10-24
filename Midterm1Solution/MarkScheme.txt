@@ -1,32 +1,30 @@
 Midterm marking 
+
 +-------------------------------------------+
 |                   Part 1                  |
 +----------------------------------+--------+
-| Main diagonal                    | 7marks |
+| generateMatrix &rand between 0-9 | 4marks |
 +----------------------------------+--------+
-| - small sol                      | 3marks |
+| ShowMatrix(every row in new line)| 3marks |
 +----------------------------------+--------+
-| - Big solution                   | 2marks |
+| Main diagonal                    | 8 marks|
+|   - small sol                    | 3marks |
+|   - Big solution                 | 2marks |
+|   - Base case                    | 3marks |
 +----------------------------------+--------+
-| - Base case                      | 2marks |
-+----------------------------------+--------+
-| Main                             | 3marks |
-+----------------------------------+--------+
-| - clear array                    | 1 mark |
-+----------------------------------+--------+
-| - Array init with random values  | 2marks |
+| Main                             | 5marks |
+|   - clear array                  | 2marks |
+|   - test                         | 3marks |
 +----------------------------------+--------+
 
 +-------------------------------------------------+
 |                       Part 2                    |
 +----------------------------------------+--------+
-| Is same                                | 10marks|
+| Is same                                | 20marks|
+| - Any sorting algorithm                | 6marks |
+| - Checking if contents of arrays match | 8marks |  
 +----------------------------------------+--------+
-| - Any sorting algorithm                | 3marks |
-+----------------------------------------+--------+
-| - Checking if contents of arrays match | 4marks |  
-+----------------------------------------+--------+
-| - Big-0 analysis                       | 3marks |
+| - Big-0 analysis                       | 6marks |
 +----------------------------------------+--------+
 
 if a student does not sort but still successfully checks if two arrays contain the same elements 
