@@ -20,9 +20,9 @@ Midterm marking
 +-------------------------------------------------+
 |                       Part 2                    |
 +----------------------------------------+--------+
-| Is same                                | 20marks|
-| - Any sorting algorithm                | 6marks |
-| - Checking if contents of arrays match | 8marks |  
+| Is same                                | 14marks|
+| - Any sorting algorithm                | 7marks |
+| - Checking if contents of arrays match | 7marks |  
 +----------------------------------------+--------+
 | - Big-0 analysis                       | 6marks |
 +----------------------------------------+--------+

@@ -177,19 +177,19 @@ int main() {
     ar[3] = 7;
     int* ar2 = new int[size];
 
-    ar2[0] = 7;
-    ar2[1] = 6;
+    ar2[0] = 6;
+    ar2[1] = 7;
     ar2[2] = 2;
     ar2[3] = 3;
-    cout << boolalpha << IsSame(ar, ar2, size) << endl;
+    cout << boolalpha << IsSame(ar, ar2, size) << endl;  //true
 
     int* ar3 = new int[size];
 
-    ar3[0] = 7;
+    ar3[0] = 70;
     ar3[1] = 6;
     ar3[2] = 2;
     ar3[3] = 4;
-    cout << boolalpha << IsSame(ar, ar3, size) << endl;
+    cout << boolalpha << IsSame(ar, ar3, size) << endl;  //false
 
     if (ar) {
         delete[] ar;

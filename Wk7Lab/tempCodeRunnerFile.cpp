@@ -1,0 +1,2 @@
+delete[] arr;
+    // arr = nullptr;
