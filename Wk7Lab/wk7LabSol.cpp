@@ -1,4 +1,5 @@
 #include <ctime>
+#include <fstream>
 #include <iostream>
 #include <string>
 
@@ -15,15 +16,24 @@ void Swap(int* arr, int pos1, int pos2) {
     arr[pos1] = temp;
 }
 
+void FindMinIndex(int* arr, int len, int startingIndex, int& min, int& minIndex) {
+    if (startingIndex == len) {
+        return;
+    } else {
+        if (arr[startingIndex] < min) {
+            min = arr[startingIndex];
+            minIndex = startingIndex;
+        }
+
+        return FindMinIndex(arr, len, startingIndex + 1, min, minIndex);
+    }
+}
 void Rec_selectionSort(int* arr, int len, int i = 0) {
     if (i == len)
         return;
-    int mini = 0;
-    for (int b = i; b < len; b++) {
-        if (arr[b] < arr[mini]) {
-            mini = b;
-        }
-    }
+    int mini = i;
+    int min = arr[mini];
+    FindMinIndex(arr, len, i, min, mini);
     if (mini != i) {
         Swap(arr, mini, i);
     }
