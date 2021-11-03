@@ -147,7 +147,7 @@ int main() {
     char* s = new char[5];
     ofstream myfile;
     double* timearr;
-    myfile.open("example.txt", ios::app);
+    myfile.open("SortingAlgorithm.txt", ios::app);
     int size = 40000;
     s[0] = 'M';
     s[1] = 'Q';
