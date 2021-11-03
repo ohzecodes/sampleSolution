@@ -1,2 +1,4 @@
-delete[] arr;
-    // arr = nullptr;
+ // if (arr != nullptr) {
+    //     delete[] arr;
+    //     arr = nullptr;
+    // }

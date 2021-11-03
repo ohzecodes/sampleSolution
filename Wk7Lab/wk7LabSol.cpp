@@ -75,7 +75,7 @@ void printArray(int* arr, int n) {
     cout << "}\n";
 }
 
-int* randomArray(int size, int min = 0, int max = 30) {
+int* randomArray(int size, int min = 0, int max = 100) {
     int* arr = new int[size];
     for (int i = 0; i < size; i++) {
         arr[i] = GenerateRandomValue(min, max);
@@ -94,10 +94,8 @@ void Unsort(int* arr, int size) {
     }
 }
 
-void gettime(int size) {
-    ofstream myfile;
-    myfile.open("example.txt", ios::app);
-
+double* gettime(int size) {
+    double* answer = new double[5];
     clock_t start, end;
     double timeTakenInSeconds;
     int* arr = randomArray(size);
@@ -106,92 +104,92 @@ void gettime(int size) {
     mergeSort(arr, size);
     end = clock();
     timeTakenInSeconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-    myfile << "MergeSort " << timeTakenInSeconds << endl;
-
+    answer[0] = timeTakenInSeconds;  //merge
     Unsort(arr, size);
 
     start = clock();
     quickSort(arr, size);
     end = clock();
     timeTakenInSeconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-    myfile << "quicksort " << timeTakenInSeconds << endl;
-
+    answer[1] = timeTakenInSeconds;  //quick
     Unsort(arr, size);
-
+    Unsort(arr, size);
     start = clock();
     Rec_insertionSort(arr, size);
     end = clock();
     timeTakenInSeconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-    myfile << "Rec_insertionSort " << timeTakenInSeconds << endl;
-
+    answer[2] = timeTakenInSeconds;  //insertion
     Unsort(arr, size);
 
     start = clock();
     Rec_bubbleSort(arr, size);
     end = clock();
     timeTakenInSeconds = (double)(end - start) / CLOCKS_PER_SEC;
-    myfile << "Rec_bubbleSort " << timeTakenInSeconds << endl;
-
+    answer[3] = timeTakenInSeconds;  // bubble
     Unsort(arr, size);
 
     start = clock();
     Rec_selectionSort(arr, size);
     end = clock();
     timeTakenInSeconds = (double)(end - start) / CLOCKS_PER_SEC;
-    myfile << "Rec_selectionSort " << timeTakenInSeconds << endl;
-    // delete[] arr;
-    // arr = nullptr;
-    myfile << "Writing this to a file.\n";
-    myfile.close();
+    answer[4] = timeTakenInSeconds;  //selection
+
+    // if (arr != nullptr) {
+    //     delete[] arr;
+    //     arr = nullptr;
+    // }
+    return answer;
 }
 
 int main() {
     srand(time(0));
-    // gettime(1000);
 
-    int size = 7;
-    int* arr = new int[size];
-    // arr[0] = 3;
-    // arr[1] = 2;
-    // arr[2] = 6;
-    // arr[3] = 7;
-    // arr[4] = 9;
-    // arr[5] = 8;
-    // arr[6] = 5;
-    // cout << "insertionSort ";
-    // // Rec_insertionSort(arr, size);
-    // Rec_insertionSort(arr, size);
-    // printArray(arr, size);
-    // arr[0] = 3;
-    // arr[1] = 2;
-    // arr[2] = 6;
-    // arr[3] = 7;
-    // arr[4] = 9;
-    // arr[5] = 8;
-    // arr[6] = 5;
-    // printArray(arr, size);
-    // cout << "bubbleSort ";
-    // Rec_bubbleSort(arr, size);
-    // printArray(arr, size);
-    // arr[0] = 3;
-    // arr[1] = 2;
-    // arr[2] = 6;
-    // arr[3] = 7;
-    // arr[4] = 9;
-    // arr[5] = 8;
-    // arr[6] = 5;
-    // printArray(arr, size);
-    arr[0] = 3;
-    arr[1] = 2;
-    arr[2] = 6;
-    arr[3] = 7;
-    arr[4] = 9;
-    arr[5] = 8;
-    arr[6] = 5;
-    Rec_selectionSort(arr, size);
-    printArray(arr, size);
+    char* s = new char[5];
+    ofstream myfile;
+    double* timearr;
+    myfile.open("example.txt", ios::app);
+    int size = 40000;
+    s[0] = 'M';
+    s[1] = 'Q';
+    s[2] = 'I';
+    s[3] = 'B';
+    s[4] = 'S';
+    timearr = gettime(size);
+
+    for (int i = 0; i < 5; i++) {
+        cout << s[i] << " : " << timearr[i] << endl;
+    }
+    cout << endl
+         << endl;
+    for (int i = 0; i < 5 - 1; i++) {
+        for (int j = 0; j < 5 - i - 1; j++) {
+            if (timearr[j] > timearr[j + 1]) {
+                // swap
+                double temp = timearr[j + 1];
+                char temp1 = s[j + 1];
+                timearr[j + 1] = timearr[j];
+                s[j + 1] = s[j];
+                timearr[j] = temp;
+                s[j] = temp1;
+            }
+        }
+    }
+    myfile << endl
+           << "size:" << size << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << s[i] << " " << timearr[i] << endl;
+        myfile << s[i] << " " << timearr[i] << endl;
+    }
+
+    myfile.close();
+    if (s) {
+        delete[] s;
+        s = nullptr;
+    }
+    if (timearr) {
+        delete[] timearr;
+        timearr = nullptr;
+    }
+
     return 0;
 }

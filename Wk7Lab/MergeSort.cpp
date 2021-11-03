@@ -23,9 +23,6 @@ void mergeSort(int list[], int arraySize) {
         // Merge firstHalf with secondHalf
         merge(firstHalf, arraySize / 2, secondHalf, secondHalfLength,
               list);
-
-        delete[] firstHalf;
-        delete[] secondHalf;
     }
 }
 
@@ -53,14 +50,3 @@ void arraycopy(int source[], int sourceStartIndex, int target[], int targetStart
         target[i + targetStartIndex] = source[i + sourceStartIndex];
     }
 }
-
-/* int main() {
-//     const int SIZE = 9;
-//     int list[] = {1, 7, 3, 4, 9, 3, 3, 1, 2};
-//     mergeSort(list, SIZE);
-//     for (int i = 0; i < SIZE; i++)
-//         cout << list[i] << " ";
-
-//     return 0;
-// }
-*/
