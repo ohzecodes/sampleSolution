@@ -5,66 +5,12 @@
 
 #include "MergeSort.cpp"
 #include "QuickSort.cpp"
+#include "recursivesorting.cpp"
+
 using namespace std;
 
 int GenerateRandomValue(int min, int max) {
     return rand() % (max - min + 1) + min;
-}
-void Swap(int* arr, int pos1, int pos2) {
-    int temp = arr[pos2];
-    arr[pos2] = arr[pos1];
-    arr[pos1] = temp;
-}
-
-void FindMinIndex(int* arr, int len, int startingIndex, int& min, int& minIndex) {
-    if (startingIndex == len) {
-        return;
-    } else {
-        if (arr[startingIndex] < min) {
-            min = arr[startingIndex];
-            minIndex = startingIndex;
-        }
-
-        return FindMinIndex(arr, len, startingIndex + 1, min, minIndex);
-    }
-}
-void Rec_selectionSort(int* arr, int len, int i = 0) {
-    if (i == len)
-        return;
-    int mini = i;
-    int min = arr[mini];
-    FindMinIndex(arr, len, i, min, mini);
-    if (mini != i) {
-        Swap(arr, mini, i);
-    }
-    Rec_selectionSort(arr, len, i + 1);
-}
-
-void Rec_insertionSort(int* arr, int size) {
-    if (size <= 1) {
-        return;
-    }
-    // start from size=2
-    Rec_insertionSort(arr, size - 1);
-    int temp = arr[size - 1];
-    int index = size - 2;
-    while (index == 0 && arr[index] > temp) {
-        arr[index + 1] = arr[index];
-        index--;
-    }
-    arr[index + 1] = temp;
-}
-
-void Rec_bubbleSort(int* arr, int n) {
-    if (n == 1)
-        return;
-    for (int i = 0; i < n - 1; i++) {
-        if (arr[i] > arr[i + 1]) {
-            Swap(arr, i, i + 1);
-        }
-    }
-
-    Rec_bubbleSort(arr, n - 1);
 }
 
 void printArray(int* arr, int n) {
@@ -141,14 +87,12 @@ double* gettime(int size) {
     return answer;
 }
 
-int main() {
-    srand(time(0));
-
+void push(int size) {
     char* s = new char[5];
     ofstream myfile;
     double* timearr;
     myfile.open("SortingAlgorithm.txt", ios::app);
-    int size = 40000;
+    // int size = 40000;
     s[0] = 'M';
     s[1] = 'Q';
     s[2] = 'I';
@@ -161,6 +105,7 @@ int main() {
     }
     cout << endl
          << endl;
+    //  buuble sort two arrays
     for (int i = 0; i < 5 - 1; i++) {
         for (int j = 0; j < 5 - i - 1; j++) {
             if (timearr[j] > timearr[j + 1]) {
@@ -190,6 +135,13 @@ int main() {
         delete[] timearr;
         timearr = nullptr;
     }
-
+}
+int main() {
+    srand(time(0));
+    push(1000);
+    push(1500);
+    push(2000);
+    push(8000);
+    push(8100);
     return 0;
 }
