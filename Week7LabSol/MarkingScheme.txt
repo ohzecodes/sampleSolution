@@ -1,8 +1,8 @@
 
 Marking Scheme 
-selection sort recursive 2/2marks 
-insertion sort recursive 2/2marks 
-bubble sort recursive 1/2marks
-getting the time 1/1marks 
-output to the file /1mark
-testing with various sizes & sorting acording to time taken  /2mark
+selection sort recursive 	2marks 
+insertion sort recursive 	2marks 
+bubble sort recursive 	2marks
+getting the time 	1mark 
+output to the file 	1mark
+testing with various sizes & sorting according to time taken  2mark
