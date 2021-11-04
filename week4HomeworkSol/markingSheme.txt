@@ -1,0 +1,22 @@
+/*
+Marking Scheme
++-----------------------+---------+
+| Recursive getNthterm  | 1 mark  |
++-----------------------+---------+
+| Slice                 | 2 marks |
++-----------------------+---------+
+| Recursive is_Sorted   | 2 marks |
++-----------------------+---------+
+| MergeInOrder          | 3 marks |
++-----------------------+---------+
+| Recursive productDigit| 2 marks |
++-----------------------+---------+
+
+Negative points
+If question requires Recursive award and solution is non recursive for that questions 0 points
+No documentation         -1/10 
+No name on top           -1/10 
+build errors and warning -1/10 
+all functions tested     -1/10
+Not a zip file           -1/10 
+*/

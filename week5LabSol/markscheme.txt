@@ -1,0 +1,8 @@
+QuickSort               	4 Marks
+    * QuickSort fix     	2 marks
+    * Memory freeing    	2 marks
+
+MergeSort                  	6 marks
+    *  Split            	3 Marks
+    *  MergeInOrder     	1 marks
+    *  MergeSort        	2 marks
