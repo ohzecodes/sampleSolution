@@ -38,7 +38,7 @@ void bubble1(int*& arr, int i, int size) {
     }
 
     if (arr[i] > arr[i + 1]) {
-        swap(arr[i], arr[i + 1]);
+        Swap(arr, i, i + 1);
     }
 
     bubble1(arr, i + 1, size);
@@ -70,7 +70,6 @@ void Rec_insertionSort(int*& arr, int size, int i = 0) {
     insert1(arr, key, j);
     Rec_insertionSort(arr, size, i + 1);
 }
-
 /*
 int main() {
     srand(time(0));
@@ -81,7 +80,7 @@ int main() {
         cout << list[i] << ".";
     }
     cout << endl;
-    bubbleSort(list, size);
+    Rec_bubbleSort(list, size);
     for (int i = 0; i < size; i++) {
         cout << list[i] << ".";
     }
@@ -91,7 +90,7 @@ int main() {
         cout << list[i] << ".";
     }
     cout << endl;
-    insertionSort(list, size);
+    Rec_insertionSort(list, size);
     for (int i = 0; i < size; i++) {
         cout << list[i] << ".";
     }
