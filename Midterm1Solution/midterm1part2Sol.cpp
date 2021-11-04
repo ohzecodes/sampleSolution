@@ -189,7 +189,7 @@ int main() {
     ar3[1] = 6;
     ar3[2] = 2;
     ar3[3] = 4;
-    cout << boolalpha << IsSame(ar, ar3, size) << endl;  //false
+    cout << IsSame(ar, ar3, size) << endl;  //false
 
     if (ar) {
         delete[] ar;
