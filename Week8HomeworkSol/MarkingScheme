@@ -1,6 +1,11 @@
-RentCar 2
-Return car 2
-rentalStatus 2
-ShowFleet 2
-Recursive Menu 2
+Marking Scheme 
+RentCar 2marks
+  1 mark for checking if already rented 
+  1 mark for renting if not rented
+Return car 2marks
+  1 mark for checking if not already rented 
+  1 mark for returning if not rented
+rentalStatus 2marks
+ShowFleet 2marks
+Recursive Menu 2marks
 
