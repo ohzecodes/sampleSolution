@@ -1,0 +1,14 @@
+MarkingScheme
+generateRandom*& constructors      2 mark
+operator*                          2 marks
+operator<<                         1 mark
+operator+                          1 mark
+operator-                          1 mark
+operator/                          1 mark
+operator >>                        2 marks
+  - must print randomly eveytime
+
+ 
+** working generateRandom: checks if the number is present in the Set or not
+     if not push
+     if yes regenerate until not present. 

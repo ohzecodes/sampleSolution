@@ -34,6 +34,9 @@ class set {
     }
 
    public:
+    vector<int>* getVector() {
+        return vSet;
+    }
     set() {
         vSet = new vector<int>;
     }
@@ -50,8 +53,11 @@ class set {
             vSet->empty();
         }
     }
-
-    void generateRandom(int n, int min, int max) {
+    set(set& s2) {
+        vSet = new vector<int>(s2.getVector()->begin(), s2.getVector()->end());
+    }
+    void
+    generateRandom(int n, int min, int max) {
         for (int i = 0; true; i++) {
             int randval = rand() % (max - min + 1) + min;
             if (!isin(randval))
@@ -62,16 +68,9 @@ class set {
         }
     }
 
-    set(set& s2) {
-        vector<int> vSet(s2.getVector()->begin(), s2.getVector()->end());
-    }
-
-    vector<int>* getVector() {
-        return vSet;
-    }
-
     friend ostream& operator<<(ostream& out, const set& s);
     friend istream& operator>>(istream& in, set& s);
+
     set operator+(set& s2) {
         set s3;
         for (int x : *this->vSet) {
@@ -137,29 +136,29 @@ void Swap(vector<int>& a, int pos1, int pos2) {
     a[pos2] = a[pos1];
     a[pos1] = temp;
 }
-void randomize(vector<int>& a) {
+void randomize(vector<int>* a) {
     int j = 0;
     while (j < 7) {
-        for (unsigned int i = 0; i < a.size(); i++) {
-            int pos_to_swap = GenerateRandomValue(0, a.size() - 1);
-            Swap(a, pos_to_swap, i);
+        for (unsigned int i = 0; i < a->size(); i++) {
+            int pos_to_swap = GenerateRandomValue(0, a->size() - 1);
+            Swap(*a, pos_to_swap, i);
         }
         j++;
     }
 }
 
 ostream& operator<<(ostream& out, set& s) {
-    vector<int> temp;
+    vector<int>* temp = new vector<int>;
     for (int x : *s.getVector()) {
-        temp.push_back(x);
+        temp->push_back(x);
     }
     randomize(temp);
 
-    for (int x : temp) {
+    for (int x : *temp) {
         cout << x << " ";
     }
-    temp.empty();
-    // temp = nullptr;
+    temp->empty();
+    temp = nullptr;
 
     return out;
 }
@@ -178,10 +177,10 @@ int main() {
     srand(time(NULL));
     int size = 4;
     int* arr = new int[size];
-    arr[0] = 10;
+    arr[0] = 1;
     arr[1] = 20;
-    arr[2] = 30;
-    arr[3] = 40;
+    arr[2] = 300;
+    arr[3] = 4000;
 
     vector<int> vec1(arr, arr + size);
     if (arr) {
@@ -190,10 +189,10 @@ int main() {
     }
 
     set v1(vec1);
-    // for (int i = 0; i < 10; i++) {
-    //     cout << v1;
-    //     cout << endl;
-    // }
+    for (int i = 0; i < 10; i++) {
+        cout << v1;
+        cout << endl;
+    }
     // cout << v1;
     // cout << endl;
     set v2;
