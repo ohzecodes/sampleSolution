@@ -1,11 +1,11 @@
 MarkingScheme
 generateRandom*& constructors      2 mark
 operator*                          2 marks
-operator<<                         1 mark
+operator>>(input)                  1 mark
 operator+                          1 mark
 operator-                          1 mark
 operator/                          1 mark
-operator >>                        2 marks
+operator <<                        2 marks
   - must print randomly eveytime
 
  
