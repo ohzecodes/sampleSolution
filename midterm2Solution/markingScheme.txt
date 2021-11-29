@@ -1,0 +1,16 @@
+part 1
+operator+ 4 marks 
+operator- 4 marks
+operaator++ 4marks
+friend Method call 1 mark 
+friend Method call 1 mark 
+operator<< 3marks
+operator>> 3marks
+
+
+Rough marking scheme according to solution but its okay if you do it in one single function
+
+DotCount            5 points
+FindDotIndex        5 points
+ContainsOnlyDigits  5 points
+IsPositiveFloat     5 points

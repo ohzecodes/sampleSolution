@@ -70,7 +70,7 @@ class set {
 
     friend ostream& operator<<(ostream& out, const set& s);
     friend istream& operator>>(istream& in, set& s);
-
+    // all elements together
     set operator+(set& s2) {
         set s3;
         for (int x : *this->vSet) {
@@ -82,6 +82,7 @@ class set {
         return s3;
     }
 
+    // elements of this but not s2
     set operator-(set& s2) {
         set s3;
         //  the set of all the elements of set A which are not there in set B.
