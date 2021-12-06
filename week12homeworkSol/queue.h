@@ -18,7 +18,9 @@ class Queue {
         //  add top
         ll->AddNodeFirst(i);
     }
-
+    bool isempty() {
+        return ll->IsEmpty();
+    }
     void Dequeue() {
         // remove Last
         ll->removeLast();

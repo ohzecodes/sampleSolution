@@ -29,13 +29,16 @@ class stack {
     int push(int i) {
         return addtop(i);
     };
-    int top() {
-        return ll->
-    }
+
     int pop() {
         return remove();
     }
-
+    bool isempty() {
+        return ll->IsEmpty();
+    }
+    int getTop() {
+        return ll->FirstIndexOf();
+    }
     void
     display() {
         Node* temp = ll->head;
