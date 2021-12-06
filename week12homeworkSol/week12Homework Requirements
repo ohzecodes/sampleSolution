@@ -1,0 +1,20 @@
+Use the LinkedList class from DoublyLinked.zip (D2L -> Week 12)
+It may need completion depending on what you need the object to do
+MUST include these codes with your final submission
+Stack (data structure where items are added to the top, and removed from the top)
+A private member LinkedList (of integers) named items
+  Public methods
+  Constructors
+  Pop (removes the top most item and returns it)
+  Push (adds a new item to the top)
+  GetTop (returns the top most item on the stack)
+  IsEmpty (returns true if there are no items; false otherwise)
+  Display (displays the stack from top to bottom)
+  Queue (data structure where items are added to the rear, and removed from the front)
+A private member LinkedList (of integers) named items
+  Public methods
+  Constructors
+  Dequeue (removes the item at the front and returns it)
+  Enqueue (adds a new item to the rear)
+  IsEmpty (returns true if there are no items; false otherwise)
+  Display (displays the queue from front to rear)
