@@ -10,7 +10,7 @@ A private member LinkedList (of integers) named items
   GetTop (returns the top most item on the stack)
   IsEmpty (returns true if there are no items; false otherwise)
   Display (displays the stack from top to bottom)
-  Queue (data structure where items are added to the rear, and removed from the front)
+Queue (data structure where items are added to the rear, and removed from the front)
 A private member LinkedList (of integers) named items
   Public methods
   Constructors
