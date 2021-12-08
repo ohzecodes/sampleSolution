@@ -32,5 +32,7 @@ class Queue {
             cout << temp->element << "\n ";
             temp = temp->next;
         }
+        cout << endl;
+        cout << endl;
     }
 };

@@ -14,7 +14,9 @@ int main() {
     cout << s->getTop() << endl;
     s->pop();
     // s->display();
-    delete s;
-
+    if (s) {
+        delete s;
+        s = nullptr;
+    }
     return 0;
 }

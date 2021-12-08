@@ -47,6 +47,9 @@ class stack {
             cout << temp->element << "\n ";
             temp = temp->next;
         }
+
+        cout << endl;
+        cout << endl;
     }
 };
 
