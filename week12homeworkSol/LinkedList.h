@@ -1,3 +1,34 @@
+
+/*From Muntaseer Salahuddin to Everyone: (7:13 PM)
+From Muntaseer Salahuddin to Everyone: (7:16 PM)
+// remove last / else case
+            Node* temp = tail;
+            tail = tail->prev;
+            int element = temp->element;
+            delete temp;
+            return element;
+
+
+            // remove first 
+            //
+            int size = this->Size();
+        if (size == 0) {
+            return -1;
+        } else if (size == 1) {
+            Node* temp = head;
+            head = tail = nullptr;
+            int element = temp->element;
+            delete temp;
+            return element;
+        } else {
+            Node* temp = head;
+            head = head->next;
+            int element = temp->element;
+            delete temp;
+            return element;
+        }
+From Muntaseer Salahuddin to Everyone: (7:31 PM)
+RemoveFirst() // 2RemoveLast() // 2stack 3queue 3stack and queue must use linked list to get full points*/
 #include <iostream>
 
 using namespace std;
@@ -156,69 +187,68 @@ class LinkedList {
             delete temp;
             return element;
         } else {
-            Node* current = head;
-            for (int i = 0; i < size - 2; i++)
-                current = current->next;
             Node* temp = tail;
-            tail = current;
-            tail->next = NULL;
-
+            tail = tail->prev;
             int element = temp->element;
             delete temp;
+            temp = nullptr;
             return element;
         }
     }
     int removeFirst() {
         int size = this->Size();
-        if (size == 0)
+        if (size == 0) {
             return -1;
-        else {
+        } else if (size == 1) {
+            Node* temp = head;
+            head = tail = nullptr;
+            int element = temp->element;
+            delete temp;
+            return element;
+        } else {
             Node* temp = head;
             head = head->next;
-            if (head == NULL) {
-                tail = NULL;
-            }
             int element = temp->element;
             delete temp;
             return element;
         }
     }
 
-    int FirstIndexOf() {
+    int getHeadValue() {
         if (this->Size() == 0)
             return -1;
         else
             return head->element;
     }
 
-    int LastIndexOf() {
+    int getTailValue() {
         if (this->Size() == 0)
             return -1;
         else
             return tail->element;
     }
 
-    int removeAt(int index) {
-        int size = this->Size();
-        if (index < 0 || index >= size)
-            return -2;
-        else if (index == 0)
-            return removeFirst();
-        else if (index == size - 1)
-            return removeLast();
-        else {
-            Node* previous = head;
+    // int removeAt(int index) {
+    //     int size = this->Size();
+    //     if (index < 0 || index >= size)
+    //         return -2;
+    //     else if (index == 0)
+    //         return removeFirst();
+    //     else if (index == size - 1)
+    //         return removeLast();
+    //     else {
+    //         Node* previous = head;
 
-            for (int i = 1; i < index; i++) {
-                previous = previous->next;
-            }
+    //         for (int i = 1; i < index; i++) {
+    //             previous = previous->next;
+    //         }
 
-            Node* current = previous->next;
-            previous->next = current->next;
-            int element = current->element;
-            delete current;
-            return element;
-        }
-    }
-};
+    //         Node* current = previous->next;
+    //         previous->next = current->next;
+    //         int element = current->element;
+    //         delete current;
+    //         return element;
+    //     }
+    // }
+// };
 #endif

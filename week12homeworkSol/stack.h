@@ -11,10 +11,10 @@ class stack {
     LinkedList* ll;
     int addtop(int i) {
         ll->AddNodeFirst(i);
-        return ll->FirstIndexOf();
+        return ll->getHeadValue();
     }
     int remove() {
-        int i = ll->FirstIndexOf();
+        int i = ll->getHeadValue();
         ll->removeFirst();
         return i;
     }

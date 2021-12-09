@@ -1,10 +1,16 @@
-Stack 5
-  Pop  2 
-  Push 2 
+Stack 3
+  Pop  1 
+  Push 1 
   GetTop 1 
 
 
-Queue 5
-  Dequeue 2 
-  Enqueue 2
+Queue 3
+  Dequeue 1 
+  Enqueue 1
   IsEmpty 1 
+
+linkedList 4
+  RemoveFirst  2
+  RemoveLast   2
+
+stack and queue must use linked list to get full points
